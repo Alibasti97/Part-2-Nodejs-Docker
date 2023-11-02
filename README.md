@@ -1,11 +1,11 @@
 # Part 2 Docker Container with Commands
 
-## 1. Created a container using the command:
+# 1. Created a container using the command:
 #### sudo docker run -d -p 8080:3000 --name dockercont-node 88493946db3f
 ## Output:
 265795947bf7206e4fe73cfc5465888f137ed236462e725b7f8a0f278b196a30
 
-## 2. Running the commands:
+# 2. Running the commands:
 
 ## 1. docker ps:
 ### Output:
@@ -278,14 +278,14 @@ Server running at http://0.0.0.0:8080/
 
 ## 12. sudo docker rename dockercont-node docker-nodejs
 ### Output
-No output but the name was changed successfully when I checked using docker ps.
+#### No output but the name was changed successfully when I checked using docker ps.
 
 CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS         PORTS                                       NAMES
 265795947bf7   88493946db3f   "docker-entrypoint.s…"   27 minutes ago   Up 6 minutes   0.0.0.0:8080->3000/tcp, :::8080->3000/tcp   docker-nodejs
 
 ## 13. sudo docker exec -i -t 265795947bf7 /bin/bash
 ### Output
-I used this command to go inside the Docker Container directory.
+#### I used this command to go inside the Docker Container directory.
 
 ubuntu@ip-172-31-46-246:~$ sudo docker exec -i -t 265795947bf7 /bin/bash
 root@265795947bf7:/app# ls
@@ -293,11 +293,11 @@ app.js
 
 ## 14. sudo docker attach 265795947bf7
 ### Output
-I used this command to attach to the default shell of a running container.
+ #### I used this command to attach to the default shell of a running container.
 
 ## 15. sudo docker wait 265795947bf7
 ### Output
-I used this command to wait for the given container to stop. Once the command stops it will print the exit code of the container.
+#### I used this command to wait for the given container to stop. Once the command stops it will print the exit code of the container.
 
 ## 16. sudo docker top 265795947bf7
 ### Output
@@ -307,7 +307,7 @@ root                4549                4529                0                   
 ## 17. sudo docker commit 265795947bf7 docker_commit_image
 ### Output
 sha256:204fc232d5b939800fcdafe38fc03f3bf2714fa7ab17de1fa771802506e1b38d
-When I used docker ps, a new image was created with a name of docker_commit_image
+#### When I used docker ps, a new image was created with a name of docker_commit_image
 
 REPOSITORY            TAG       IMAGE ID       CREATED              SIZE
 docker_commit_image   latest    204fc232d5b9   About a minute ago   181MB
@@ -318,8 +318,22 @@ node                  14-slim   7671819c5461   6 months ago         181MB
 ## 18. sudo docker cp 2.txt 265795947bf7:/app/file.txt
 ### Output
 Successfully copied 1.54kB to 265795947bf7:/app/file.txt
-I used this command to copy the 2.txt file inside the container in the app directory.
+#### I used this command to copy the 2.txt file inside the container in the app directory.
 
 ## 19. sudo docker rm -f 265795947bf7
 ### Output
 265795947bf7
+
+# 3. Pushing the Code to github.
+
+### git push -u origin master
+## Output
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 3.69 KiB | 1.84 MiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0     
+To https://github.com/Alibasti97/Part-2-Nodejs-Docker.git
+   ae5e1a0..443455e  master -> master
+branch 'master' set up to track 'origin/master'.
